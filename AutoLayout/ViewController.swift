@@ -26,8 +26,19 @@ class ViewController: UIViewController {
         let textView = UITextView()
         //Enable the autolayout to uitextview 
         textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        //Create a Attributed Text
+        //Add the text with heading style
+        let attributtedText  = NSMutableAttributedString(string: "Join us today in our fun and games!", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)])
+        
+        attributtedText.append(NSMutableAttributedString(string: "\n\n\n Are you ready for loads and loads of fun? Don't wait any longer! we hope to see you in our stores soon", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSMutableAttributedString.Key.strikethroughColor: UIColor.gray]))
+        //Set the text to textview
+        textView.attributedText = attributtedText
+        
         //Set the bold font to textview
-        textView.font = UIFont.boldSystemFont(ofSize: 18)
+        //Commented becase we are goin to add attributted text
+        //textView.font = UIFont.boldSystemFont(ofSize: 18)
         //Make it center alligned
         textView.textAlignment = .center
         //Disable editable
@@ -36,8 +47,6 @@ class ViewController: UIViewController {
         textView.isSelectable = false
         //Disable scrollable
         textView.isScrollEnabled = false
-        //Set the text to textview
-        textView.text = "Join us today in our fun and games!"
         return textView
     }()
     
@@ -99,9 +108,9 @@ class ViewController: UIViewController {
         //Commented its shoubld be based on the topImagecontainer view
         //lblTextView.topAnchor.constraint(equalTo: bearImageView.bottomAnchor, constant: 100).isActive = true
         //Left side will start from left side of the view
-        lblTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        lblTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         //Right side end up with the right side of the view
-        lblTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        lblTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         //This is must to view the label in the view
         lblTextView.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 0).isActive = true
     }
