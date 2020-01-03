@@ -52,24 +52,28 @@ class ViewController: UIViewController {
     
     let btButtonPrev :  UIButton = {
         let button = UIButton()
+        button.setTitle("PREV", for: .normal)
+        button.setTitleColor(.gray, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    let lblButtonPrevTitle: UILabel = {
-        let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
-    }()
+//    let lblButtonPrevTitle: UILabel = {
+//        let lable = UILabel()
+//        lable.translatesAutoresizingMaskIntoConstraints = false
+//        return lable
+//    }()
     
-    let lblButtonNextTitle: UILabel = {
-        let lable = UILabel()
-        lable.translatesAutoresizingMaskIntoConstraints = false
-        return lable
-    }()
+//    let lblButtonNextTitle: UILabel = {
+//        let lable = UILabel()
+//        lable.translatesAutoresizingMaskIntoConstraints = false
+//        return lable
+//    }()
     
     let btButtonNext :  UIButton = {
         let button = UIButton()
+        button.setTitle("NEXT", for: .normal)
+        button.setTitleColor(.red, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -134,120 +138,133 @@ class ViewController: UIViewController {
         //Commented its shoubld be based on the topImagecontainer view
         //lblTextView.topAnchor.constraint(equalTo: bearImageView.bottomAnchor, constant: 100).isActive = true
         //Left side will start from left side of the view
-        lblTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        lblTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24).isActive = true
         //Right side end up with the right side of the view
-        lblTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive = true
+        lblTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24).isActive = true
         //This is must to view the label in the view
         lblTextView.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 0).isActive = true
         
+        //Custom Next and previous button with page controll commented 
+//        btButtonPrev.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+//        btButtonPrev.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        btButtonPrev.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        btButtonPrev.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//
+//        btButtonPrev.addSubview(lblButtonPrevTitle)
+//        lblButtonPrevTitle.text = "PREV"
+//        lblButtonPrevTitle.textColor = .gray
+//        lblButtonPrevTitle.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24).isActive = true
+//        lblButtonPrevTitle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
+//
+//        btButtonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+//        btButtonNext.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        btButtonNext.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        btButtonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//
+//        btButtonNext.addSubview(lblButtonNextTitle)
+//        lblButtonNextTitle.text = "NEXT"
+//        lblButtonNextTitle.textColor = .red
+//        lblButtonNextTitle.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24).isActive = true
+//        lblButtonNextTitle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         
-        btButtonPrev.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        btButtonPrev.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        btButtonPrev.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        btButtonPrev.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//        let indexViewContainer = UIView()
+//        indexViewContainer.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(indexViewContainer)
+//        indexViewContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        indexViewContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        indexViewContainer.widthAnchor.constraint(equalToConstant: 80).isActive = true
+//        indexViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+//
+//        let index1 = UIView()
+//        index1.translatesAutoresizingMaskIntoConstraints = false
+//        indexViewContainer.addSubview(index1)
+//        index1.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
+//        index1.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
+//        index1.leadingAnchor.constraint(equalTo: indexViewContainer.leadingAnchor).isActive = true
+//
+//
+//        let round1 = UIView()
+//        round1.backgroundColor = .red
+//        round1.translatesAutoresizingMaskIntoConstraints = false
+//        index1.addSubview(round1)
+//        round1.centerXAnchor.constraint(equalTo: index1.centerXAnchor).isActive = true
+//        round1.centerYAnchor.constraint(equalTo: index1.centerYAnchor).isActive = true
+//        round1.widthAnchor.constraint(equalToConstant: 10).isActive = true
+//        round1.heightAnchor.constraint(equalToConstant: 10).isActive = true
+//        round1.layer.cornerRadius = 5
+//
+//
+//        let index2 = UIView()
+//        index2.translatesAutoresizingMaskIntoConstraints = false
+//        indexViewContainer.addSubview(index2)
+//        index2.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
+//        index2.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
+//        index2.leadingAnchor.constraint(equalTo: index1.trailingAnchor).isActive = true
+//
+//
+//        let round2 = UIView()
+//        round2.backgroundColor = .gray
+//        round2.translatesAutoresizingMaskIntoConstraints = false
+//        index2.addSubview(round2)
+//        round2.centerXAnchor.constraint(equalTo: index2.centerXAnchor).isActive = true
+//        round2.centerYAnchor.constraint(equalTo: index2.centerYAnchor).isActive = true
+//        round2.widthAnchor.constraint(equalToConstant: 10).isActive = true
+//        round2.heightAnchor.constraint(equalToConstant: 10).isActive = true
+//        round2.layer.cornerRadius = 5
+//
+//
+//        let index3 = UIView()
+//        index3.translatesAutoresizingMaskIntoConstraints = false
+//        indexViewContainer.addSubview(index3)
+//        index3.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
+//        index3.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
+//        index3.leadingAnchor.constraint(equalTo: index2.trailingAnchor).isActive = true
+//
+//        let round3 = UIView()
+//        round3.backgroundColor = .gray
+//        round3.translatesAutoresizingMaskIntoConstraints = false
+//        index3.addSubview(round3)
+//        round3.centerXAnchor.constraint(equalTo: index3.centerXAnchor).isActive = true
+//        round3.centerYAnchor.constraint(equalTo: index3.centerYAnchor).isActive = true
+//        round3.widthAnchor.constraint(equalToConstant: 10).isActive = true
+//        round3.heightAnchor.constraint(equalToConstant: 10).isActive = true
+//        round3.layer.cornerRadius = 5
+//
+//
+//        let index4 = UIView()
+//        index4.translatesAutoresizingMaskIntoConstraints = false
+//        indexViewContainer.addSubview(index4)
+//        index4.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
+//        index4.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
+//        index4.leadingAnchor.constraint(equalTo: index3.trailingAnchor).isActive = true
+//
+//
+//        let round4 = UIView()
+//        round4.backgroundColor = .gray
+//        round4.translatesAutoresizingMaskIntoConstraints = false
+//        index4.addSubview(round4)
+//        round4.centerXAnchor.constraint(equalTo: index4.centerXAnchor).isActive = true
+//        round4.centerYAnchor.constraint(equalTo: index4.centerYAnchor).isActive = true
+//        round4.widthAnchor.constraint(equalToConstant: 10).isActive = true
+//        round4.heightAnchor.constraint(equalToConstant: 10).isActive = true
+//        round4.layer.cornerRadius = 5
         
-        btButtonPrev.addSubview(lblButtonPrevTitle)
-        lblButtonPrevTitle.text = "PREV"
-        lblButtonPrevTitle.textColor = .gray
-        lblButtonPrevTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
-        lblButtonPrevTitle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        
-        btButtonNext.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        btButtonNext.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        btButtonNext.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        btButtonNext.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        
-        btButtonNext.addSubview(lblButtonNextTitle)
-        lblButtonNextTitle.text = "NEXT"
-        lblButtonNextTitle.textColor = .red
-        lblButtonNextTitle.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive = true
-        lblButtonNextTitle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
-        
-        let indexViewContainer = UIView()
-        indexViewContainer.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(indexViewContainer)
-        indexViewContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        indexViewContainer.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        indexViewContainer.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        indexViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-        
-        let index1 = UIView()
-        index1.translatesAutoresizingMaskIntoConstraints = false
-        indexViewContainer.addSubview(index1)
-        index1.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
-        index1.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
-        index1.leadingAnchor.constraint(equalTo: indexViewContainer.leadingAnchor).isActive = true
-        
-        
-        let round1 = UIView()
-        round1.backgroundColor = .red
-        round1.translatesAutoresizingMaskIntoConstraints = false
-        index1.addSubview(round1)
-        round1.centerXAnchor.constraint(equalTo: index1.centerXAnchor).isActive = true
-        round1.centerYAnchor.constraint(equalTo: index1.centerYAnchor).isActive = true
-        round1.widthAnchor.constraint(equalToConstant: 10).isActive = true
-        round1.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        round1.layer.cornerRadius = 5
-        
-        
-        let index2 = UIView()
-        index2.translatesAutoresizingMaskIntoConstraints = false
-        indexViewContainer.addSubview(index2)
-        index2.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
-        index2.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
-        index2.leadingAnchor.constraint(equalTo: index1.trailingAnchor).isActive = true
-        
-        
-        let round2 = UIView()
-        round2.backgroundColor = .gray
-        round2.translatesAutoresizingMaskIntoConstraints = false
-        index2.addSubview(round2)
-        round2.centerXAnchor.constraint(equalTo: index2.centerXAnchor).isActive = true
-        round2.centerYAnchor.constraint(equalTo: index2.centerYAnchor).isActive = true
-        round2.widthAnchor.constraint(equalToConstant: 10).isActive = true
-        round2.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        round2.layer.cornerRadius = 5
-        
-        
-        let index3 = UIView()
-        index3.translatesAutoresizingMaskIntoConstraints = false
-        indexViewContainer.addSubview(index3)
-        index3.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
-        index3.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
-        index3.leadingAnchor.constraint(equalTo: index2.trailingAnchor).isActive = true
-        
-        let round3 = UIView()
-        round3.backgroundColor = .gray
-        round3.translatesAutoresizingMaskIntoConstraints = false
-        index3.addSubview(round3)
-        round3.centerXAnchor.constraint(equalTo: index3.centerXAnchor).isActive = true
-        round3.centerYAnchor.constraint(equalTo: index3.centerYAnchor).isActive = true
-        round3.widthAnchor.constraint(equalToConstant: 10).isActive = true
-        round3.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        round3.layer.cornerRadius = 5
-        
-        
-        let index4 = UIView()
-        index4.translatesAutoresizingMaskIntoConstraints = false
-        indexViewContainer.addSubview(index4)
-        index4.widthAnchor.constraint(equalTo: indexViewContainer.widthAnchor, multiplier: 0.25).isActive = true
-        index4.heightAnchor.constraint(equalTo: indexViewContainer.heightAnchor).isActive = true
-        index4.leadingAnchor.constraint(equalTo: index3.trailingAnchor).isActive = true
+        //Page Controll
+        let pageController  = UIPageControl()
+        pageController.currentPage = 0
+        pageController.currentPageIndicatorTintColor = .red
+        pageController.numberOfPages = 4
+        pageController.pageIndicatorTintColor = .gray
         
         
-        let round4 = UIView()
-        round4.backgroundColor = .gray
-        round4.translatesAutoresizingMaskIntoConstraints = false
-        index4.addSubview(round4)
-        round4.centerXAnchor.constraint(equalTo: index4.centerXAnchor).isActive = true
-        round4.centerYAnchor.constraint(equalTo: index4.centerYAnchor).isActive = true
-        round4.widthAnchor.constraint(equalToConstant: 10).isActive = true
-        round4.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        round4.layer.cornerRadius = 5
-        
-        
+        //stack veiw
+        let stackView = UIStackView(arrangedSubviews: [btButtonPrev, pageController ,btButtonNext
+        ])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(stackView)
+        stackView.distribution  = .fillEqually
+         
     }
-    
     
 }
 
